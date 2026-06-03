@@ -8,8 +8,12 @@
   const userUrl = "https://api.github.com/users/crs7617";
   const reposUrl = "https://api.github.com/users/crs7617/repos?per_page=100&page=";
   const themeColors = {
-    dark: "#0d0e11",
+    dark: "#050506",
     light: "#f4f1eb",
+  };
+  const heatmapAccents = {
+    dark: "7cd4ff",
+    light: "006f9e",
   };
 
   const statsStatus = document.querySelector("[data-stats-status]");
@@ -19,6 +23,8 @@
     followers: document.querySelector('[data-stat-value="followers"]'),
   };
   const languageChart = document.querySelector("[data-language-chart]");
+  const heatmapImg = document.querySelector("[data-heatmap-img]");
+  const heatmapFallback = document.querySelector("[data-heatmap-fallback]");
 
   function safeStorageGet(key) {
     try {
@@ -48,6 +54,10 @@
 
     if (themeColorMeta) {
       themeColorMeta.setAttribute("content", themeColors[nextTheme]);
+    }
+
+    if (heatmapImg && !heatmapImg.dataset.failed) {
+      heatmapImg.src = `https://ghchart.rshah.org/${heatmapAccents[nextTheme]}/crs7617`;
     }
 
     if (toggle) {
@@ -268,6 +278,24 @@
     toggle.addEventListener("click", function () {
       setTheme(getTheme() === "light" ? "dark" : "light", true);
     });
+  }
+
+  if (heatmapImg) {
+    const showHeatmapFallback = function () {
+      heatmapImg.dataset.failed = "true";
+      heatmapImg.hidden = true;
+
+      if (heatmapFallback) {
+        heatmapFallback.hidden = false;
+      }
+    };
+
+    heatmapImg.addEventListener("error", showHeatmapFallback);
+
+    // The deferred script may run after the image has already failed to load.
+    if (heatmapImg.complete && heatmapImg.naturalWidth === 0) {
+      showHeatmapFallback();
+    }
   }
 
   loadGitHubStats();
