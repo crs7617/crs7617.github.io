@@ -1,22 +1,27 @@
 :root {
   color-scheme: dark;
-  /* Dark theme — true black, jdx-style hairlines */
+  /* Dark theme — true black, monochrome, jdx-style hairlines */
   --bg: #050506;
   --surface: transparent;
-  --surface-hover: rgba(255, 255, 255, 0.04);
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.16);
+  --surface-hover: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.2);
   --text: #ededed;
-  --text-muted: #9a9ca3;
-  --text-dim: #6f7177;
-  --accent: #7cd4ff;
-  --accent-strong: #a9e5ff;
-  --radius: 0.9rem;
+  --text-muted: #a6a7ac;
+  --text-dim: #74767c;
+  /* Black & white interactive color (no blue) */
+  --link: #ededed;
+  --link-strong: #ffffff;
+
+  --font-serif: "Lora", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --radius: 0.85rem;
   --radius-pill: 999px;
-  --content-width: 42rem;
+  --content-width: 44rem;
   --transition: 180ms ease;
-  --section-space: clamp(3rem, 6vw, 4.25rem);
-  --card-pad: 1.2rem;
+  --section-space: clamp(3.25rem, 6vw, 4.5rem);
+  --card-pad: 1.35rem;
 }
 
 [data-theme="light"] {
@@ -24,13 +29,13 @@
   --bg: #f4f1eb;
   --surface: rgba(15, 17, 22, 0.04);
   --surface-hover: rgba(15, 17, 22, 0.08);
-  --border: rgba(15, 17, 22, 0.14);
-  --border-strong: rgba(15, 17, 22, 0.22);
+  --border: rgba(15, 17, 22, 0.16);
+  --border-strong: rgba(15, 17, 22, 0.26);
   --text: #12141a;
   --text-muted: #4f5766;
-  --text-dim: #727a8a;
-  --accent: #006f9e;
-  --accent-strong: #004f71;
+  --text-dim: #6c7382;
+  --link: #12141a;
+  --link-strong: #000000;
 }
 
 * {
@@ -46,16 +51,17 @@ body {
   min-height: 100vh;
   background: var(--bg);
   color: var(--text);
-  font-family: "Manrope", system-ui, sans-serif;
-  line-height: 1.6;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* Keep the original layered light-theme background exactly as before. */
+/* Keep the original layered light-theme background. */
 [data-theme="light"] body {
   background:
-    radial-gradient(circle at top, rgba(0, 111, 158, 0.06), transparent 34%),
+    radial-gradient(circle at top, rgba(0, 0, 0, 0.04), transparent 34%),
     linear-gradient(180deg, #f4f1eb 0%, #f4f1eb 64%, #ece7df 100%);
 }
 
@@ -64,13 +70,9 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: var(--accent-strong);
-}
-
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--text);
   outline-offset: 4px;
 }
 
@@ -123,7 +125,6 @@ svg {
 }
 
 .brand {
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -131,13 +132,14 @@ svg {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.1rem;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
 
 .nav-actions a {
   color: var(--text-muted);
+  transition: color var(--transition);
 }
 
 .nav-actions a:hover {
@@ -155,7 +157,7 @@ svg {
   background: var(--surface);
   color: var(--text);
   cursor: pointer;
-  transition: border-color var(--transition), background-color var(--transition), color var(--transition);
+  transition: border-color var(--transition), background-color var(--transition);
 }
 
 .theme-toggle:hover {
@@ -183,28 +185,28 @@ svg {
 /* ---------- Compact profile ---------- */
 
 .profile {
-  padding-top: 2.4rem;
+  padding-top: 2.6rem;
 }
 
 .profile-name {
   margin: 0;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 1.5rem;
-  font-weight: 500;
-  letter-spacing: 0.01em;
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 4.5vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }
 
 .profile-bio {
-  margin: 0.5rem 0 0;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.85rem;
-  line-height: 1.55;
+  margin: 0.6rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
   color: var(--text-muted);
-  max-width: 48ch;
+  max-width: 54ch;
 }
 
 .profile .social-links {
-  margin-top: 1rem;
+  margin-top: 1.15rem;
 }
 
 .social-links {
@@ -218,8 +220,8 @@ svg {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.95rem;
-  height: 1.95rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: var(--radius-pill);
   border: 1px solid var(--border);
   background: var(--surface);
@@ -230,12 +232,12 @@ svg {
 .social-links a:hover {
   border-color: var(--border-strong);
   background: var(--surface-hover);
-  color: var(--accent);
+  color: var(--link-strong);
 }
 
 .social-links svg {
-  width: 0.9rem;
-  height: 0.9rem;
+  width: 0.95rem;
+  height: 0.95rem;
   fill: currentColor;
   stroke: currentColor;
 }
@@ -247,12 +249,11 @@ svg {
 }
 
 .eyebrow {
-  margin: 0 0 1.1rem;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  margin: 0 0 1.25rem;
   font-size: 0.72rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--text-dim);
 }
 
 h1,
@@ -270,14 +271,15 @@ p {
 
 .project-card {
   display: grid;
-  gap: 0.85rem;
+  gap: 0.9rem;
   padding: var(--card-pad);
 }
 
 .card-title {
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .card-text {
@@ -287,13 +289,21 @@ p {
 
 .card-links a,
 .quiet-link a {
-  color: var(--accent);
-  font-weight: 600;
-  font-size: 0.9rem;
+  color: var(--link);
+  font-weight: 500;
+  border-bottom: 1px solid var(--border-strong);
+  padding-bottom: 1px;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.card-links a:hover,
+.quiet-link a:hover {
+  color: var(--link-strong);
+  border-color: var(--link-strong);
 }
 
 .quiet-link {
-  margin-top: 0.9rem;
+  margin-top: 1rem;
   font-size: 0.9rem;
 }
 
@@ -302,20 +312,19 @@ p {
 .tag-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.45rem;
   margin: 0;
 }
 
 .tag-row span {
   display: inline-flex;
   align-items: center;
-  padding: 0.2rem 0.6rem;
+  padding: 0.28rem 0.7rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-pill);
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   letter-spacing: 0.01em;
-  color: var(--text-dim);
+  color: var(--text-muted);
   background: transparent;
   transition: border-color var(--transition), color var(--transition);
 }
@@ -330,20 +339,20 @@ p {
 .tech-list {
   margin: 0;
   display: grid;
-  gap: 1.1rem;
+  gap: 1.35rem;
 }
 
 .tech-group {
   display: grid;
-  grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
-  gap: 0.6rem 1rem;
+  grid-template-columns: minmax(0, 12rem) minmax(0, 1fr);
+  gap: 0.7rem 1.25rem;
   align-items: baseline;
 }
 
 .tech-group dt {
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.78rem;
-  color: var(--text-muted);
+  font-size: 0.88rem;
+  color: var(--text);
+  font-weight: 500;
 }
 
 .tech-group dd {
@@ -357,41 +366,53 @@ p {
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 1.15rem;
+  gap: 1.75rem;
 }
 
-.experience-line {
-  font-size: 0.92rem;
-  color: var(--text-muted);
+.experience-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+
+.experience-company {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.experience-meta {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  white-space: nowrap;
 }
 
 .experience-role {
-  color: var(--text);
-  font-weight: 600;
-}
-
-.experience-dates {
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.8rem;
-  color: var(--text-dim);
+  margin-top: 0.15rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
 }
 
 .experience-desc {
-  margin-top: 0.2rem;
-  font-size: 0.9rem;
-  color: var(--text-dim);
+  margin-top: 0.5rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-muted);
 }
 
 /* ---------- GitHub ---------- */
 
 .section-note {
-  margin: 0 0 1rem;
+  margin: 0 0 1.1rem;
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 }
 
 .subtle-note {
-  margin: 1.1rem 0 0;
+  margin: 1.25rem 0 0;
   color: var(--text-dim);
   font-size: 0.8rem;
 }
@@ -404,33 +425,35 @@ p {
 
 .stat-card {
   display: grid;
-  gap: 0.4rem;
-  padding: 0.95rem 1rem;
+  gap: 0.45rem;
+  padding: 1.05rem 1.1rem;
 }
 
 .stat-label {
   color: var(--text-muted);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
 }
 
 .stat-value {
-  font-size: clamp(1.6rem, 4vw, 2rem);
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 4vw, 2.1rem);
   line-height: 1;
-  letter-spacing: -0.04em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .github-block {
-  margin-top: 1.6rem;
+  margin-top: 1.85rem;
   display: grid;
-  gap: 0.85rem;
+  gap: 0.9rem;
 }
 
 .block-title {
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 0.78rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
 }
 
 .chart-placeholder {
@@ -440,72 +463,77 @@ p {
 
 .language-chart {
   display: grid;
-  gap: 0.7rem;
+  gap: 0.75rem;
 }
 
 .language-row {
   display: grid;
-  grid-template-columns: minmax(0, 7rem) minmax(0, 1fr) auto;
-  gap: 0.75rem;
+  grid-template-columns: minmax(0, 8rem) minmax(0, 1fr) auto;
+  gap: 0.85rem;
   align-items: center;
 }
 
 .language-name,
 .language-percent {
   color: var(--text-muted);
-  font-size: 0.82rem;
+  font-size: 0.84rem;
 }
 
 .language-track {
   position: relative;
   height: 0.5rem;
   border-radius: var(--radius-pill);
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.08);
   overflow: hidden;
 }
 
 [data-theme="light"] .language-track {
-  background: rgba(15, 17, 22, 0.08);
+  background: rgba(15, 17, 22, 0.1);
 }
 
 .language-fill {
   position: absolute;
   inset: 0 auto 0 0;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  background: var(--text);
 }
 
-/* ---------- Contributions heatmap ---------- */
+/* ---------- Contributions heatmap (GitHub-style light panel) ---------- */
 
 .heatmap {
   margin: 0;
+  background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 0.9rem;
+  padding: 1rem 1.1rem;
+  overflow-x: auto;
 }
 
 .heatmap-img {
   width: 100%;
+  min-width: 34rem;
   height: auto;
 }
 
 .heatmap-fallback {
   margin: 0;
+  min-width: 0;
+  color: #57606a;
+  font-size: 0.9rem;
 }
 
 .heatmap-fallback a {
-  color: var(--accent);
-  font-weight: 600;
+  color: #0969da;
+  font-weight: 500;
 }
 
 /* ---------- Footer ---------- */
 
 .site-footer {
-  padding: 3rem 0 2.25rem;
+  padding: 3.25rem 0 2.25rem;
 }
 
 .copyright {
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
   font-size: 0.72rem;
   letter-spacing: 0.04em;
   color: var(--text-dim);
@@ -520,21 +548,25 @@ p {
   }
 
   .nav-actions {
-    gap: 0.7rem 0.9rem;
+    gap: 0.7rem 1rem;
     justify-content: flex-start;
   }
 
   .tech-group {
     grid-template-columns: minmax(0, 1fr);
-    gap: 0.45rem;
+    gap: 0.5rem;
   }
 
   .stats-grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .experience-meta {
+    white-space: normal;
+  }
+
   .language-row {
-    grid-template-columns: minmax(0, 5.5rem) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 6rem) minmax(0, 1fr);
   }
 
   .language-percent {

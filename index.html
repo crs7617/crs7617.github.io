@@ -19,7 +19,7 @@
     <link rel="apple-touch-icon" href="assets/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
     <script>
       (function () {
         const storageKey = "theme";
@@ -38,7 +38,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="styles.css?v=2">
+    <link rel="stylesheet" href="styles.css?v=3">
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>
@@ -78,7 +78,7 @@
     <main id="content">
       <section class="profile" id="top" aria-label="Introduction">
         <h1 class="profile-name">Sairam CR</h1>
-        <p class="profile-bio">Software engineer. I build AI-powered tools and tinker with low-level systems.</p>
+        <p class="profile-bio">Software engineer, 21, open-source contributor. I explore AI across domains and tinker with low-level systems.</p>
         <div class="social-links" aria-label="Social links">
           <a href="https://github.com/crs7617" target="_blank" rel="noreferrer" aria-label="GitHub profile">
             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -138,9 +138,10 @@
             <dt>Languages</dt>
             <dd class="tag-row">
               <span>Python</span>
-              <span>TypeScript</span>
+              <span>C</span>
+              <span>C++</span>
+              <span>Java</span>
               <span>JavaScript</span>
-              <span>C/C++</span>
               <span>SQL</span>
             </dd>
           </div>
@@ -148,21 +149,41 @@
             <dt>Frameworks &amp; libraries</dt>
             <dd class="tag-row">
               <span>FastAPI</span>
-              <span>Next.js</span>
               <span>Node.js</span>
-              <span>React</span>
               <span>LangChain</span>
+              <span>Streamlit</span>
+              <span>Next.js</span>
+              <span>TensorFlow</span>
             </dd>
           </div>
           <div class="tech-group">
-            <dt>Tools &amp; infra</dt>
+            <dt>Data &amp; visualization</dt>
             <dd class="tag-row">
-              <span>Git</span>
-              <span>Docker</span>
-              <span>Linux</span>
+              <span>NumPy</span>
+              <span>Pandas</span>
+              <span>Seaborn</span>
+              <span>Matplotlib</span>
+            </dd>
+          </div>
+          <div class="tech-group">
+            <dt>Databases &amp; tools</dt>
+            <dd class="tag-row">
               <span>PostgreSQL</span>
+              <span>Redis</span>
+              <span>Git</span>
               <span>Supabase</span>
+              <span>Linux</span>
+              <span>Docker</span>
+              <span>CI/CD</span>
+              <span>Postman</span>
+              <span>Jupyter</span>
+            </dd>
+          </div>
+          <div class="tech-group">
+            <dt>Cloud &amp; infra</dt>
+            <dd class="tag-row">
               <span>AWS</span>
+              <span>Nginx</span>
             </dd>
           </div>
         </dl>
@@ -172,12 +193,20 @@
         <p class="eyebrow" id="experience-title">Experience</p>
         <ul class="experience-list">
           <li class="experience-item">
-            <p class="experience-line"><span class="experience-role">Research Intern</span> · Samsung R&amp;D Institute · <span class="experience-dates">2024–2025</span></p>
-            <p class="experience-desc">Ported RISC-V to an RTOS (TizenRT).</p>
+            <div class="experience-head">
+              <h3 class="experience-company">Samsung R&amp;D Institute India</h3>
+              <span class="experience-meta">Remote · Jul 2024 – Apr 2025</span>
+            </div>
+            <p class="experience-role">PRISM Research Intern</p>
+            <p class="experience-desc">Ported RISC-V to the TizenRT RTOS — startup code, scheduler, interrupts, and linker scripts — and validated the port on QEMU with the GNU toolchain.</p>
           </li>
           <li class="experience-item">
-            <p class="experience-line"><span class="experience-role">Data Science Intern</span> · Prodian Infotech · <span class="experience-dates">2024</span></p>
-            <p class="experience-desc">Built AI tools for document analysis and data exploration.</p>
+            <div class="experience-head">
+              <h3 class="experience-company">Prodian Infotech</h3>
+              <span class="experience-meta">Chennai, India · Jun 2024 – Jul 2024</span>
+            </div>
+            <p class="experience-role">Data Science Intern</p>
+            <p class="experience-desc">Built AI-powered analytics tools: a RAG document analyzer (LangChain + LLaMA) and a FastAPI/Streamlit dashboard for exploring datasets in natural language.</p>
           </li>
         </ul>
       </section>
@@ -214,11 +243,11 @@
           <figure class="heatmap" data-heatmap>
             <img
               class="heatmap-img"
-              src="https://ghchart.rshah.org/7cd4ff/crs7617"
+              src="https://ghchart.rshah.org/40c463/crs7617"
               alt="Sairam CR's GitHub contributions over the past year"
               loading="lazy"
               data-heatmap-img>
-            <figcaption class="chart-placeholder heatmap-fallback" data-heatmap-fallback hidden>
+            <figcaption class="heatmap-fallback" data-heatmap-fallback hidden>
               Contributions graph is unavailable right now. View it on
               <a href="https://github.com/crs7617" target="_blank" rel="noreferrer">GitHub →</a>
             </figcaption>
@@ -233,6 +262,6 @@
       <p class="copyright">© 2026 Sairam CR</p>
     </footer>
 
-    <script src="script.js?v=2" defer></script>
+    <script src="script.js?v=3" defer></script>
   </body>
 </html>

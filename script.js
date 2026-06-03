@@ -11,10 +11,6 @@
     dark: "#050506",
     light: "#f4f1eb",
   };
-  const heatmapAccents = {
-    dark: "7cd4ff",
-    light: "006f9e",
-  };
 
   const statsStatus = document.querySelector("[data-stats-status]");
   const statValueNodes = {
@@ -54,10 +50,6 @@
 
     if (themeColorMeta) {
       themeColorMeta.setAttribute("content", themeColors[nextTheme]);
-    }
-
-    if (heatmapImg && !heatmapImg.dataset.failed) {
-      heatmapImg.src = `https://ghchart.rshah.org/${heatmapAccents[nextTheme]}/crs7617`;
     }
 
     if (toggle) {
