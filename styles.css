@@ -498,11 +498,13 @@ p {
   background: var(--text);
 }
 
-/* ---------- Contributions heatmap (GitHub-style light panel) ---------- */
+/* ---------- Contributions heatmap (GitHub dark style) ---------- */
+/* ghchart renders green squares on light-gray empties. invert + hue-rotate
+   flips it to GitHub's dark look: dark empties, brighter green = more active. */
 
 .heatmap {
   margin: 0;
-  background: #ffffff;
+  background: #0d1117;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1rem 1.1rem;
@@ -513,17 +515,18 @@ p {
   width: 100%;
   min-width: 34rem;
   height: auto;
+  filter: invert(1) hue-rotate(180deg);
 }
 
 .heatmap-fallback {
   margin: 0;
   min-width: 0;
-  color: #57606a;
+  color: #8b949e;
   font-size: 0.9rem;
 }
 
 .heatmap-fallback a {
-  color: #0969da;
+  color: #58a6ff;
   font-weight: 500;
 }
 
