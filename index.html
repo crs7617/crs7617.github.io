@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Sairam CR is a software engineer building thoughtful, polished web experiences and practical systems.">
-    <meta name="theme-color" content="#0f1116">
+    <meta name="description" content="Sairam CR is a software engineer building fast, clean, thoughtful web experiences and practical tools.">
+    <meta name="theme-color" content="#0d0e11">
     <meta property="og:title" content="Sairam CR | Software Engineer">
-    <meta property="og:description" content="A clean, minimal portfolio for software engineering work, projects, and contact links.">
+    <meta property="og:description" content="A minimal portfolio for Sairam CR with about, projects, tech, and live GitHub stats.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://crs7617.github.io/">
     <meta property="og:image" content="assets/og-image.svg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Sairam CR | Software Engineer">
-    <meta name="twitter:description" content="A clean, minimal portfolio for software engineering work, projects, and contact links.">
+    <meta name="twitter:description" content="A minimal portfolio for Sairam CR with about, projects, tech, and live GitHub stats.">
     <meta name="twitter:image" content="assets/og-image.svg">
     <title>Sairam CR | Software Engineer</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -47,8 +47,10 @@
       <nav class="top-nav" aria-label="Primary">
         <a class="brand" href="#top">Sairam CR</a>
         <div class="nav-actions">
-          <a href="#work">Work</a>
           <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#tech">Tech</a>
+          <a href="#stats">Stats</a>
           <button class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
             <span class="theme-icon theme-icon--sun" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -74,90 +76,173 @@
     </header>
 
     <main id="content">
-      <section class="hero section" id="top">
+      <section class="hero section section--hero" id="top">
         <p class="eyebrow">Software Engineer</p>
-        <h1>Building clear, durable software with thoughtful detail.</h1>
-        <p class="lede">I design and ship practical products with a focus on clean interfaces, dependable systems, and the small choices that make software feel polished.</p>
+        <h1>Building software that feels fast, calm, and clear.</h1>
+        <p class="lede">I care about clean interfaces, sturdy implementation details, and products that make the useful part obvious. That usually means less noise, better defaults, and a lot of attention to the last 10%.</p>
       </section>
 
-      <section class="section" id="work" aria-labelledby="work-title">
+      <section class="section" id="about" aria-labelledby="about-title">
         <div class="section-heading">
-          <p class="eyebrow">Selected Work</p>
-          <h2 id="work-title">A few placeholder projects.</h2>
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">A quick intro, not a resume.</h2>
+        </div>
+        <div class="content-card prose-card">
+          <p>I'm Sairam — a software engineer who likes building things that feel fast, look clean, and don't make people think too hard. I got into programming chasing the "wait, I can just make that?" feeling and never really stopped. These days that's small tools, AI-flavored side projects, and the occasional low-level deep dive just to see how the sausage is made. Off the clock I'm usually overanalyzing a film on Letterboxd or building a playlist for a mood that lasts exactly one afternoon.</p>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <p class="eyebrow">Projects</p>
+          <h2 id="projects-title">One featured build.</h2>
         </div>
 
         <div class="project-grid">
-          <article class="project-card">
-            <p class="project-kicker">01 / Product</p>
-            <h3>Workflow Dashboard</h3>
-            <p>A focused internal tool for tracking work, surfacing status, and reducing friction in day-to-day operations.</p>
+          <article class="content-card project-card project-card--featured">
+            <div class="card-topline">
+              <p class="project-kicker">Featured</p>
+              <h3>NOIV</h3>
+            </div>
+            <p class="project-description">An AI-powered API testing tool. Describe what an endpoint should do in plain English and NOIV generates and runs the test cases for you, with endpoint validation built in.</p>
             <div class="tag-row" aria-label="Technologies used">
-              <span>HTML</span>
-              <span>CSS</span>
+              <span>Python</span>
+              <span>Typer</span>
+              <span>Gemini</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/crs7617" aria-label="Replace with the NOIV repository URL">Repo →</a>
+            </div>
+          </article>
+        </div>
+
+        <p class="quiet-link"><a href="https://github.com/crs7617" target="_blank" rel="noreferrer">More on GitHub →</a></p>
+      </section>
+
+      <section class="section" id="tech" aria-labelledby="tech-title">
+        <div class="section-heading">
+          <p class="eyebrow">Tech</p>
+          <h2 id="tech-title">A minimal stack snapshot.</h2>
+        </div>
+
+        <div class="tech-grid">
+          <article class="content-card tech-card">
+            <h3>Languages</h3>
+            <div class="tag-row">
+              <span>Python</span>
+              <span>TypeScript</span>
               <span>JavaScript</span>
-            </div>
-            <div class="project-links">
-              <a href="https://example.com" target="_blank" rel="noreferrer">Live</a>
-              <a href="https://github.com/crs7617" target="_blank" rel="noreferrer">Code</a>
+              <span>C/C++</span>
+              <span>SQL</span>
             </div>
           </article>
 
-          <article class="project-card">
-            <p class="project-kicker">02 / Platform</p>
-            <h3>Docs Search Experience</h3>
-            <p>An intentionally minimal search surface for navigating content quickly without adding visual noise.</p>
-            <div class="tag-row" aria-label="Technologies used">
-              <span>Accessibility</span>
-              <span>UI Design</span>
-              <span>Performance</span>
-            </div>
-            <div class="project-links">
-              <a href="https://example.com" target="_blank" rel="noreferrer">Live</a>
-              <a href="https://github.com/crs7617" target="_blank" rel="noreferrer">Code</a>
+          <article class="content-card tech-card">
+            <h3>Frameworks &amp; libraries</h3>
+            <div class="tag-row">
+              <span>FastAPI</span>
+              <span>Next.js</span>
+              <span>Node.js</span>
+              <span>React</span>
+              <span>LangChain</span>
             </div>
           </article>
 
-          <article class="project-card">
-            <p class="project-kicker">03 / Systems</p>
-            <h3>Release Notes Builder</h3>
-            <p>A lightweight publishing flow that turns updates into readable release notes with a predictable structure.</p>
-            <div class="tag-row" aria-label="Technologies used">
-              <span>Automation</span>
-              <span>Content</span>
-              <span>Tooling</span>
-            </div>
-            <div class="project-links">
-              <a href="https://example.com" target="_blank" rel="noreferrer">Live</a>
-              <a href="https://github.com/crs7617" target="_blank" rel="noreferrer">Code</a>
+          <article class="content-card tech-card">
+            <h3>Tools &amp; infra</h3>
+            <div class="tag-row">
+              <span>Git</span>
+              <span>Docker</span>
+              <span>Linux</span>
+              <span>PostgreSQL</span>
+              <span>Supabase</span>
+              <span>AWS</span>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="section now-strip" id="about" aria-labelledby="now-title">
-        <p class="eyebrow">Now</p>
-        <h2 id="now-title">Currently refining this portfolio and exploring small, well-crafted web interactions.</h2>
+      <section class="section" id="stats" aria-labelledby="stats-title">
+        <div class="section-heading">
+          <p class="eyebrow">Stats</p>
+          <h2 id="stats-title">Live GitHub data, cached locally.</h2>
+        </div>
+
+        <p class="section-note" data-stats-status aria-live="polite">Loading live GitHub stats…</p>
+
+        <div class="stats-grid" data-stats-grid>
+          <article class="content-card stat-card">
+            <span class="stat-label">Public repos</span>
+            <strong class="stat-value" data-stat-value="repos">—</strong>
+          </article>
+          <article class="content-card stat-card">
+            <span class="stat-label">Total stars</span>
+            <strong class="stat-value" data-stat-value="stars">—</strong>
+          </article>
+          <article class="content-card stat-card">
+            <span class="stat-label">Followers</span>
+            <strong class="stat-value" data-stat-value="followers">—</strong>
+          </article>
+        </div>
+
+        <article class="content-card chart-card" aria-labelledby="languages-title">
+          <div class="card-topline">
+            <p class="project-kicker">Chart</p>
+            <h3 id="languages-title">Top Languages</h3>
+          </div>
+          <div class="language-chart" data-language-chart>
+            <p class="chart-placeholder">Waiting for GitHub data…</p>
+          </div>
+        </article>
+
+        <p class="section-note subtle-note">Data comes from the public GitHub REST API and is cached for about 6 hours.</p>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="social-links" aria-label="Social links">
-        <a href="https://github.com/crs7617" target="_blank" rel="noreferrer" aria-label="GitHub profile">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 2.2a9.8 9.8 0 0 0-3.1 19.1c.5.1.7-.2.7-.5v-1.9c-2.7.6-3.3-1.1-3.3-1.1-.4-1-.9-1.3-.9-1.3-.8-.6.1-.6.1-.6.9.1 1.3.9 1.3.9.8 1.3 2.1.9 2.6.7.1-.6.3-.9.6-1.2-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 .9-2.7-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.7 1a9.2 9.2 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.2.1 2.5.6.7.9 1.6.9 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A9.8 9.8 0 0 0 12 2.2Z"></path>
-          </svg>
-        </a>
-        <a href="https://linkedin.com/in/sairamcr" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5.2 6.5A2.1 2.1 0 1 1 5.2 2.3a2.1 2.1 0 0 1 0 4.2ZM3.4 21.7h3.6V8.8H3.4v12.9Zm6 0H13v-7c0-1.8.3-3.5 2.5-3.5 2.2 0 2.2 2 2.2 3.6v6.9h3.6v-7.6c0-3.8-.8-6.7-5.2-6.7-2.1 0-3.5 1.2-4 2.3h-.1V8.8H9.4c0 1 .1 12.9.1 12.9Z"></path>
-          </svg>
-        </a>
-        <a href="mailto:crsairam7617@gmail.com" aria-label="Send email">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3.5 5.6h17A1.5 1.5 0 0 1 22 7.1v9.8a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 16.9V7.1a1.5 1.5 0 0 1 1.5-1.5Zm0 1.7v.4l8.5 5.7 8.5-5.7v-.4h-17Zm17 9.4V9.8l-8.1 5.5a.7.7 0 0 1-.8 0L3.5 9.8v6.9h17Z"></path>
-          </svg>
-        </a>
+      <div class="footer-group footer-group--primary">
+        <p class="footer-heading">Connect</p>
+        <div class="social-links social-links--primary">
+          <a href="https://github.com/crs7617" target="_blank" rel="noreferrer" aria-label="GitHub profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2.2a9.8 9.8 0 0 0-3.1 19.1c.5.1.7-.2.7-.5v-1.9c-2.7.6-3.3-1.1-3.3-1.1-.4-1-.9-1.3-.9-1.3-.8-.6.1-.6.1-.6.9.1 1.3.9 1.3.9.8 1.3 2.1.9 2.6.7.1-.6.3-.9.6-1.2-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 .9-2.7-.1-.3-.4-1.2.1-2.5 0 0 .8-.3 2.7 1a9.2 9.2 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.2.1 2.5.6.7.9 1.6.9 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A9.8 9.8 0 0 0 12 2.2Z"></path>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/sairamcr" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5.2 6.5A2.1 2.1 0 1 1 5.2 2.3a2.1 2.1 0 0 1 0 4.2ZM3.4 21.7h3.6V8.8H3.4v12.9Zm6 0H13v-7c0-1.8.3-3.5 2.5-3.5 2.2 0 2.2 2 2.2 3.6v6.9h3.6v-7.6c0-3.8-.8-6.7-5.2-6.7-2.1 0-3.5 1.2-4 2.3h-.1V8.8H9.4c0 1 .1 12.9.1 12.9Z"></path>
+            </svg>
+          </a>
+          <a href="mailto:crsairam7617@gmail.com" aria-label="Send email">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3.5 5.6h17A1.5 1.5 0 0 1 22 7.1v9.8a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 16.9V7.1a1.5 1.5 0 0 1 1.5-1.5Zm0 1.7v.4l8.5 5.7 8.5-5.7v-.4h-17Zm17 9.4V9.8l-8.1 5.5a.7.7 0 0 1-.8 0L3.5 9.8v6.9h17Z"></path>
+            </svg>
+          </a>
+        </div>
       </div>
+
+      <div class="footer-group footer-group--secondary">
+        <p class="footer-heading">Elsewhere</p>
+        <div class="social-links social-links--secondary">
+          <a href="https://open.spotify.com/user/your-spotify-id" target="_blank" rel="noreferrer" aria-label="Spotify profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+              <path d="M7.2 9.4c3.2-1 6.3-.9 9.2.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+              <path d="M7.8 12.1c2.6-.8 5.1-.7 7.6.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+              <path d="M8.4 14.7c2-.5 4-.4 5.8.3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+            </svg>
+          </a>
+          <a href="https://letterboxd.com/your-letterboxd-handle/" target="_blank" rel="noreferrer" aria-label="Letterboxd profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="4.2" y="4.2" width="15.6" height="15.6" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"></rect>
+              <path d="M8.8 7.7v8.6h4.9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+              <circle cx="15.7" cy="8.6" r="1.3" fill="currentColor"></circle>
+              <circle cx="15.7" cy="11.7" r="1.3" fill="currentColor"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+
       <p class="copyright">© 2026 Sairam CR. All rights reserved.</p>
     </footer>
 
